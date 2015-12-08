@@ -1,0 +1,33 @@
+
+$roboto-font-path: "/bower_components/materialize/font/roboto/" !default;
+$icons-font-path: "/bower_components/materialize/font/material-design-icons/" !default;
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'font-awesome/scss/font-awesome';
+@import 'materialize/sass/materialize';
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'controls/controls.scss';
+@import 'dashboard/dashboard.scss';
+@import 'settings/settings.scss';
+// endinjector
+
+//.ng-dialog
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  background: white;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 1em;
+  width: 450px;
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 2em;
+  padding-top: 100px;
+}

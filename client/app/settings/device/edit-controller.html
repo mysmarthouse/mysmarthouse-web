@@ -1,0 +1,38 @@
+<div class="row">
+  <form class="col s12" name="device-form">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="name" type="text" class="validate">
+        <label for="name">Controller Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="board" type="text" class="validate">
+        <label for="board">Board#</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="pin" type="text" class="validate">
+        <label for="pin">PIN#</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <select class="" id="type" ng-model="selectedType" material-select watch>
+          <option ng-repeat="value in controllerTypes">{{value.name}}</option>
+        </select>
+        <label for="type">Controller Type</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col s12">
+        <button class="btn" type="submit" name="action">
+          Save
+        </button>
+        <button class="btn btn-flat" ng-click="closeThisDialog()" type="submit" name="action">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
