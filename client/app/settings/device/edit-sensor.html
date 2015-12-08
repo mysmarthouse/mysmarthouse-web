@@ -2,23 +2,23 @@
   <form class="col s12" name="device-form">
     <div class="row">
       <div class="input-field col s12">
-        <input id="name" type="text" class="validate">
+        <input id="name" ng-model="sensor.name" type="text" class="validate">
         <label for="name">Sensor Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
-        <input id="board" type="text" class="validate">
+        <input id="board" ng-model="sensor.boardId" type="text" class="validate">
         <label for="board">Board#</label>
       </div>
       <div class="input-field col s6">
-        <input id="pin" type="text" class="validate">
+        <input id="pin" ng-model="sensor.pin" type="text" class="validate">
         <label for="pin">PIN#</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
-        <select class="" id="type" ng-model="selectedType" material-select watch>
+        <select class="" id="type" ng-model="sensor.type" material-select watch>
           <option ng-repeat="value in sensorTypes">{{value.name}}</option>
         </select>
         <label for="type">Sensor Type</label>
@@ -30,11 +30,14 @@
     </div>
     <div class="row">
       <div class=" col s12">
-        <button class="btn" type="submit" name="action">
+        <button class="btn" type="submit" ng-click="save()" name="action">
           Save
         </button>
-        <button class="btn btn-flat" type="submit" ng-click="closeThisDialog()" name="action">
+        <button ng-hide="sensorId" class="btn btn-flat" type="submit" ng-click="closeThisDialog()" name="action">
           Cancel
+        </button>
+        <button ng-show="sensorId" class="btn btn-flat" type="submit" ng-click="delete()" name="action">
+          Delete
         </button>
       </div>
     </div>

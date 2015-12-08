@@ -3,16 +3,18 @@
 angular.module('mysmarthouseWebApp', [
   'ngCookies',
   'ngResource',
+  'restangular',
   'ngDialog',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
   'ui.materialize'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {
     $urlRouterProvider
       .otherwise('/controls');
-
+    RestangularProvider.setBaseUrl('api/');
+    RestangularProvider.setRestangularFields({id: '_id'});
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })

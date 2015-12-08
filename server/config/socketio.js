@@ -18,8 +18,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/device/device.socket').register(socket);
-  require('../api/thing/thing.socket').register(socket);
+  require('../api/controller/controller.socket').register(socket);
+  require('../api/sensor/sensor.socket').register(socket);
 }
 
 module.exports = function (socketio) {

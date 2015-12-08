@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/mysmarthouseweb-dev'
   },
 
-  seedDB: true
+  //seedDB: true
 };

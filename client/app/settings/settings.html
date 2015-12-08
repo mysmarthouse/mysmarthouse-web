@@ -10,11 +10,11 @@
         <p> Board #{{device.boardId}} > PIN #{{device.pin}} <br>
           Last Value: {{device.lastValue}}
         </p>
-        <a ui-sref=".editSensor({sensorId: device.sensorId})"
+        <a ui-sref=".editSensor({sensorId: device._id})"
            ng-show="device.deviceType === 'sensor'"
            class="secondary-content">
           <i class="material-icons">edit</i></a>
-        <a ui-sref=".editController({controllerId: device.controllerId})"
+        <a ui-sref=".editController({controllerId: device._id})"
            ng-show="device.deviceType === 'controller'"
            class="secondary-content">
           <i class="material-icons">edit</i></a>
