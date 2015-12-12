@@ -6,11 +6,26 @@ angular.module('mysmarthouseWebApp')
       'title': 'Home',
       'link': '/'
     }];
+    $scope.station = {};
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
+
+    var socket = io();
+    socket.emit('station:status:get', 1, function(status){
+      $scope.station.connected = status;
+      $scope.$apply();
+    });
+    socket.on('station:status', function(status){
+      $scope.station.connected = status;
+      $scope.$apply();
+    });
+
+    $scope.resetStation = function(){
+      socket.emit('station:reset');
+    };
 
     $scope.logout = function() {
       Auth.logout();

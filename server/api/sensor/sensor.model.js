@@ -1,7 +1,7 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+var mongoose = require('mongoose-q')();
+var Schema = mongoose.Schema;
 
 var SensorSchema = new Schema({
   name: String,
@@ -11,6 +11,9 @@ var SensorSchema = new Schema({
     default: 'value'
   },
   boardId: String,
+  lastValue: Number,
+  connected: Boolean,
+  lastUpdated: Date,
   pin: Number
 });
 

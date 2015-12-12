@@ -8,7 +8,7 @@
         <span class="title">{{device.name}}</span>
 
         <p> Board #{{device.boardId}} > PIN #{{device.pin}} <br>
-          Last Value: {{device.lastValue}}
+          Last Value: <b>{{device.lastValue}}</b>
         </p>
         <a ui-sref=".editSensor({sensorId: device._id})"
            ng-show="device.deviceType === 'sensor'"

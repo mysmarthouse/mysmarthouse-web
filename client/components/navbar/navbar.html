@@ -1,4 +1,4 @@
-<nav class="white">
+<nav class="white" ng-controller="NavbarCtrl">
   <div class="nav-wrapper row">
     <div class="col s12">
       <a href="#" class="brand-logo black-text">My Smart House</a>
@@ -15,7 +15,9 @@
             <i class="material-icons">developer_board</i></a>
         </li>
         <li>
-          <a href="" class="teal-text" ng-click="logout()">
+          <a href="" class="teal-text"
+             ng-click="resetStation()"
+             ng-class="{'teal-text': station.connected, 'red-text': !station.connected}">
             <i class="material-icons">settings_power</i>
           </a>
         </li>
